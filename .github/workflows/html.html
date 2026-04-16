@@ -1,48 +1,64 @@
-<div class="game-container">
-  <h1>Midnight Library</h1>
-  <p class="story">Загрузка дела...</p>
+<!DOCTYPE html>
+<html lang="ru">
 
-  <div class="hints-container">
-    <button onclick="toggleLanguage()" id="btn-lang" class="btn-hint">Язык поиска: RU</button>
-    <button onclick="useMagnifier()" class="btn-hint">Взять лупу 🔍</button>
-    <button onclick="useInsight()" id="hint-insight" class="btn-hint" style="display:none;">Озарение 💡</button>
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. ПОДКЛЮЧАЕМ CSS (внутри head) -->
+    <link rel="stylesheet" href="CSS.css">
 
-  <div class="main-layout">
-    <!-- Сетка -->
-    <div id="grid" class="grid"></div>
+    <title>Midnight Library</title>
+</head>
 
-    <!-- Боковая панель -->
-    <div class="word-list">
-      <h3 id="list-title">Список поиска:</h3>
-      <ul id="ui-word-list"></ul>
-      <button onclick="resetGame()" class="btn-new" id="btn-reset">Начать заново</button>
+<body>
+    <div class="game-container">
+        <h1>Midnight Library</h1>
+        <p class="story">Загрузка дела...</p>
+
+        <div class="hints-container">
+            <button onclick="toggleLanguage()" id="btn-lang" class="btn-hint">Язык поиска: RU</button>
+            <button onclick="useMagnifier()" class="btn-hint">Взять лупу 🔍</button>
+            <button onclick="useInsight()" id="hint-insight" class="btn-hint" style="display:none;">Озарение 💡</button>
+        </div>
+
+        <div class="main-layout">
+            <!-- Сетка -->
+            <div id="grid" class="grid"></div>
+
+            <!-- Боковая панель -->
+            <div class="word-list">
+                <h3 id="list-title">Список поиска:</h3>
+                <ul id="ui-word-list"></ul>
+                <button onclick="resetGame()" class="btn-new" id="btn-reset">Начать заново</button>
+            </div>
+        </div>
+
+        <!-- Блок финала -->
+        <div id="victory-msg">
+            <h2 id="protocol-title">ПРОТОКОЛ РАССЛЕДОВАНИЯ</h2>
+            <p id="protocol-desc">Используйте оставшиеся буквы, чтобы заполнить отчет:</p>
+
+            <div class="input-group">
+                <label id="label-killer">Убийца (Killer):</label>
+                <input type="text" id="input-killer" placeholder="...">
+            </div>
+            <div class="input-group">
+                <label id="label-victim">Жертва (Victim):</label>
+                <input type="text" id="input-victim" placeholder="...">
+            </div>
+            <div class="input-group">
+                <label id="label-weapon">Орудие (Weapon):</label>
+                <input type="text" id="input-weapon" placeholder="...">
+            </div>
+            <div class="input-group">
+                <label id="label-location">Место (Location):</label>
+                <input type="text" id="input-location" placeholder="...">
+            </div>
+
+            <button onclick="verifyInvestigation()" class="btn-check" id="btn-verify">Проверить версию</button>
+            <p id="final-result"></p>
+        </div>
     </div>
-  </div>
+    <script src="JS.js"></script>
+</body>
 
-  <!-- Блок финала -->
-  <div id="victory-msg">
-    <h2 id="protocol-title">ПРОТОКОЛ РАССЛЕДОВАНИЯ</h2>
-    <p id="protocol-desc">Используйте оставшиеся буквы, чтобы заполнить отчет:</p>
-
-    <div class="input-group">
-      <label id="label-killer">Убийца (Killer):</label>
-      <input type="text" id="input-killer" placeholder="...">
-    </div>
-    <div class="input-group">
-      <label id="label-victim">Жертва (Victim):</label>
-      <input type="text" id="input-victim" placeholder="...">
-    </div>
-    <div class="input-group">
-      <label id="label-weapon">Орудие (Weapon):</label>
-      <input type="text" id="input-weapon" placeholder="...">
-    </div>
-    <div class="input-group">
-      <label id="label-location">Место (Location):</label>
-      <input type="text" id="input-location" placeholder="...">
-    </div>
-
-    <button onclick="verifyInvestigation()" class="btn-check" id="btn-verify">Проверить версию</button>
-    <p id="final-result"></p>
-  </div>
-</div>
+</html>
